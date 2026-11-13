@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pay with M-Pesa</title>
+  <link rel="stylesheet" href="qr-pay.css">
+</head>
+<body>
+  <main class="card">
+    <h1 id="business-name">Pay with M-Pesa</h1>
+    <p class="sub">Choose an amount and follow the steps.</p>
+
+    <label for="amount">Amount (KES)</label>
+    <input id="amount" type="number" min="1" >
+
+    
+
+    <ol id="steps" class="steps"></ol>
+
+   
+    <div id="stk-box" >
+      <label for="phone"> get a PIN prompt on your phone</label>
+      <input id="phone" type="tel" placeholder="+2547XXXXXXXX" pattern="\+254[0-9]{9}" required>
+      <button type="button" id="stk-btn">Send prompt to my phone</button>
+    </div>
+
+    <p id="message"></p>
+    <p class="note">Only enter your M-Pesa PIN inside the M-Pesa app or the Safaricom prompt.</p>
+
+    <details class="owner">
+      <summary>Business owner: create the QR code</summary>
+      <label for="qr-url">Link the QR code should open</label>
+      <input id="qr-url" type="url" placeholder="https://your-site.com/qr-pay.html">
+      <button type="button" id="qr-btn">Generate QR code</button>
+      <div id="qr-output"></div>
+      <a id="qr-download" class="download" hidden>Download QR image</a>
+    </details>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="qr-pay.js"></script>
+</body>
+</html>
